@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                font-family: "Montserrat", sans-serif;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-accent": "#bdd2f6", "navy": { "DEFAULT": "#102542", "deep": "#0a192f", "soft": "#18345c" }, "slate-dark": "#1e293b", "slate-body": "#334155", "terracotta": { "DEFAULT": "#b45309", "dark": "#9a3412", "light": "#ffedd5" }, "forest": { "DEFAULT": "#047857", "dark": "#064e3b", "light": "#d1fae5" } }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "fontFamily": { "label-sm": ["Space Grotesk"], "body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-sm": ["Hanken Grotesk"], "display-hero": ["Space Grotesk"], "label-md": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-lg": ["Hanken Grotesk"], "label-lg": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "headline-md": ["Space Grotesk"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-hero-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }] } } } };</script>
+</head>
+
+<body class="bg-[#f8fafc] font-body-md text-slate-dark antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#bdd2f6]/40 shadow-sm">
+        <div class="h-20 max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+            <a class="flex items-center gap-2 group" data-path="inicio" href="#">
+                <span class="flex items-center font-headline-md text-headline-md tracking-tight"><span
+                        class="text-sky-300 font-bold">eco</span>
+                    <span class="text-sky-500 font-bold">Organiza
+                    </span>
+                </span>
+
+            </a>
+            <nav class="hidden lg:flex items-center gap-8"><a aria-current="page"
+                    class="transition-colors text-navy font-bold border-b-2 border-navy pb-0.5" data-path="inicio"
+                    href="#">Inicio</a><a
+                    class="font-label-lg text-label-lg text-slate-body hover:text-navy transition-colors"
+                    data-path="nosotros" href="#nosotros">Nosotros</a><a
+                    class="font-label-lg text-label-lg text-slate-body hover:text-navy transition-colors"
+                    data-path="producto" href="#producto">Producto</a><a
+                    class="font-label-lg text-label-lg text-slate-body hover:text-navy transition-colors"
+                    data-path="beneficios" href="#beneficios">Beneficios</a><a
+                    class="font-label-lg text-label-lg text-slate-body hover:text-navy transition-colors"
+                    data-path="pedidos" href="#pedidos">Pedidos</a><a
+                    class="font-label-lg text-label-lg text-slate-body hover:text-navy transition-colors"
+                    data-path="contacto" href="#pedidos">Contacto</a></nav>
+            <div class="flex items-center gap-4"><a
+                    class="hidden sm:inline-flex items-center justify-center h-12 px-6 rounded-lg bg-navy text-white font-label-lg text-label-lg hover:bg-navy-soft transition-all shadow-md hover:shadow-lg"
+                    data-path="pedidos" href="#pedidos">Pedir Ahora</a>
+                <div
+                    class="w-8 h-8 rounded-full bg-[#bdd2f6] text-navy flex items-center justify-center font-bold border border-navy/20">
+                    <span class="material-symbols-outlined text-navy text-[18px]">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-[#f8fafc]">
+        <div class="flex flex-col w-full">
+            <!-- HERO SECTION -->
+            <section class="relative w-full overflow-hidden bg-white py-16 lg:py-24 border-b border-[#bdd2f6]/30">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                        <!-- Left Content Column -->
+                        <div class="lg:col-span-7 flex flex-col items-start z-10">
+                            <div
+                                class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#bdd2f6]/40 border border-[#bdd2f6] text-navy mb-6 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px] text-forest"
+                                    style="font-variation-settings: 'FILL' 1;">eco</span>
+                                <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">100% Cartón
+                                    Reutilizado y Sostenible</span>
+                            </div>
+                            <div class="mb-4">
+                                <h1 class="font-display-hero text-display-hero text-navy tracking-tight font-bold mt-1">
+                                    EcoOrganiza
+                                </h1>
+                            </div>
+                            <p
+                                class="font-headline-md text-headline-md text-slate-dark font-semibold max-w-xl mb-4 leading-snug">
+                                “Ordena tu espacio, cuida tu planeta.”
+                            </p>
+                            <p class="font-body-lg text-body-lg text-slate-body max-w-xl mb-8 leading-relaxed">
+                                La solución práctica, resistente y económica para mantener tus útiles escolares
+                                organizados en un solo lugar, con diseño ergonómico y compromiso ecológico real.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+                                <a class="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-navy text-white font-label-lg text-label-lg hover:bg-navy-soft transition-all shadow-md group"
+                                    href="#producto">
+                                    <span>Conocer el Producto</span>
+                                    <span
+                                        class="material-symbols-outlined text-[18px] ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                                <a class="inline-flex items-center justify-center h-12 px-7 rounded-lg bg-white border-2 border-sky-500 text-sky-500 font-label-lg text-label-lg hover:bg-sky-300/40 transition-all shadow-sm"
+                                    href="#pedidos">
+                                    <span
+                                        class="material-symbols-outlined text-sky-500 text-[20px] mr-2">shopping_bag</span>
+                                    <span>Hacer Pedido (S/ 20.00)</span>
+                                </a>
+                            </div>
+                            <!-- Micro specs stats -->
+                            <div class="grid grid-cols-3 gap-6 pt-10 mt-8 w-full max-w-lg border-t border-[#bdd2f6]/40">
+                                <div class="flex flex-col">
+                                    <span class="font-display-hero text-headline-lg text-forest font-bold">100%</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-slate-body uppercase mt-1 font-semibold">Fibra
+                                        Reciclada</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-display-hero text-headline-lg text-sky-500 font-bold">S/
+                                        20</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-slate-body uppercase mt-1 font-semibold">Precio
+                                        Accesible</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-display-hero text-headline-lg text-navy font-bold">6 en 1</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-slate-body uppercase mt-1 font-semibold">Compartimentos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Showcase Column -->
+                        <div class="lg:col-span-5 relative">
+                            <div
+                                class="relative w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-white to-[#bdd2f6]/30 shadow-xl overflow-hidden p-3 border border-[#bdd2f6]/60">
+                                <img class="w-full h-full object-cover rounded-xl"
+                                    data-alt="Modern eco-friendly desk organizer crafted from precision-cut corrugated and pressed recycled kraft cardboard with clean architectural compartments, holding pencils, scissors, rulers and markers, placed on a bright minimalist study desk in natural morning daylight, neutral white and forest emerald tones"
+                                    src="img/organizador-home.jpg" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent pointer-events-none rounded-xl">
+                                </div>
+                                <!-- Floating Benefit Badges -->
+                                <div
+                                    class="absolute top-6 left-6 flex items-center gap-2 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-lg shadow-md border border-[#bdd2f6]">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-forest"></span>
+                                    <span
+                                        class="font-label-md text-label-md text-forest-dark font-bold uppercase tracking-wider">Hecho a Mano
+                                        </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECCIÓN: SOBRE NUESTRO EMPRENDIMIENTO (#nosotros) -->
+            <section class="w-full py-16 lg:py-24 bg-[#f8fafc]" id="nosotros">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
+                        <span
+                            class="font-label-sm text-label-sm uppercase tracking-widest text-sky-500 font-bold mb-2">Compromiso
+                            &amp; Origen</span>
+                        <h2 class="font-headline-lg text-headline-lg text-navy font-bold tracking-tight">
+                            Sobre Nuestro Emprendimiento
+                        </h2>
+                        <p class="font-body-md text-body-md text-slate-body mt-3">
+                            Nacimos en las aulas para responder a una necesidad real de orden escolar, combinando diseño
+                            estructural y circularidad de materiales.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Card 1: Problemática -->
+                        <div
+                            class="flex flex-col bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#bdd2f6]/30 border border-[#bdd2f6] flex items-center justify-center text-navy mb-6">
+                                <span class="material-symbols-outlined text-[26px]">troubleshoot</span>
+                            </div>
+                            <span
+                                class="font-label-sm text-label-sm uppercase tracking-wider text-sky-500 font-bold mb-1">01
+                                / Diagnóstico</span>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-3">
+                                Problemática Identificada
+                            </h3>
+                            <p class="font-body-md text-body-md text-slate-body leading-relaxed">
+                                Muchos estudiantes sufren por tener sus útiles desordenados, perdiendo tiempo al buscar
+                                sus materiales o arriesgándose a perderlos y dañarlos durante la jornada de clases.
+                            </p>
+                            <div class="mt-auto pt-6 flex items-center text-slate-dark font-label-md text-label-md">
+                                <span
+                                    class="material-symbols-outlined text-forest text-[16px] mr-1.5">check_circle</span>
+                                <span>Espacios saturados y pérdida de foco</span>
+                            </div>
+                        </div>
+                        <!-- Card 2: Propuesta -->
+                        <div
+                            class="flex flex-col bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-[#bdd2f6]">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#bdd2f6] flex items-center justify-center text-navy mb-6">
+                                <span class="material-symbols-outlined text-[26px]">architecture</span>
+                            </div>
+                            <span
+                                class="font-label-sm text-label-sm uppercase tracking-wider text-sky-500 font-bold mb-1">02
+                                / Solución Modular</span>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-3">
+                                Nuestra Propuesta
+                            </h3>
+                            <p class="font-body-md text-body-md text-slate-body leading-relaxed">
+                                Elaboramos organizadores funcionales de cartón reutilizado divididos en compartimentos
+                                especiales adaptados a las necesidades escolares cotidianas.
+                            </p>
+                            <div class="mt-auto pt-6 flex items-center text-slate-dark font-label-md text-label-md">
+                                <span
+                                    class="material-symbols-outlined text-forest text-[16px] mr-1.5">check_circle</span>
+                                <span>Divisiones optimizadas para útiles</span>
+                            </div>
+                        </div>
+                        <!-- Card 3: Propósito Ambiental -->
+                        <div
+                            class="flex flex-col bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-forest-light flex items-center justify-center text-forest-dark mb-6">
+                                <span class="material-symbols-outlined text-[26px]"
+                                    style="font-variation-settings: 'FILL' 1;">compost</span>
+                            </div>
+                            <span
+                                class="font-label-sm text-label-sm uppercase tracking-wider text-forest-dark font-bold mb-1">03
+                                / Conciencia Verde</span>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-3">
+                                Propósito Ambiental
+                            </h3>
+                            <p class="font-body-md text-body-md text-slate-body leading-relaxed">
+                                Promover un espacio de trabajo limpio y reducir el impacto ambiental reutilizando
+                                sobrantes de cartón y evitando el desperdicio en comunidades educativas.
+                            </p>
+                            <div class="mt-auto pt-6 flex items-center text-slate-dark font-label-md text-label-md">
+                                <span
+                                    class="material-symbols-outlined text-forest text-[16px] mr-1.5">check_circle</span>
+                                <span>Huella de carbono neutralizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECCIÓN: PRODUCTO DESTACADO (#producto) -->
+            <section class="w-full py-16 lg:py-24 bg-white border-y border-[#bdd2f6]/30" id="producto">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Left: Technical & Visual Gallery -->
+                        <div class="lg:col-span-7 flex flex-col gap-4">
+                            <div
+                                class="w-full aspect-[16/10] bg-[#f8fafc] rounded-2xl overflow-hidden shadow-md relative border border-[#bdd2f6]/50">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Close-up detailed view of an eco-friendly cardboard school desk organizer with visible layered grooves, compartments filled with color pencils, scissors, highlighters and a mini waste compartment with pencil shavings, clean bright studio product photography"
+                                    src="img/organizador-home.jpg" />
+                                
+                            </div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div
+                                    class="aspect-square bg-[#f8fafc] rounded-xl overflow-hidden shadow-sm border border-[#bdd2f6]/40 hover:border-navy transition-colors">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Detailed macro angle of the mini cardboard integrated dustbin component of the EcoOrganiza organizer on a clean white desk, crisp natural light"
+                                        src="img/toma-frontal.jpg" />
+                                </div>
+                                <div
+                                    class="aspect-square bg-[#f8fafc] rounded-xl overflow-hidden shadow-sm border border-[#bdd2f6]/40 hover:border-navy transition-colors">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Top-down perspective of the multi-compartment slots holding pens, markers, and drafting tools with perfect millimeter alignment in durable pressed recycled cardboard"
+                                        src="img/toma-superior.jpg" />
+                                </div>
+                                <div
+                                    class="aspect-square bg-[#f8fafc] rounded-xl overflow-hidden shadow-sm border border-[#bdd2f6]/40 hover:border-navy transition-colors">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="EcoOrganiza organizer tested on a student school classroom wooden desk, demonstrating stability, balance and clutter-free organization"
+                                        src="img/toma-niña.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right: Technical Specification & Pricing Callout -->
+                        <div class="lg:col-span-5 flex flex-col items-start">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#bdd2f6]/40 border border-[#bdd2f6] text-navy font-label-sm text-label-sm uppercase font-bold mb-3">
+                                Ficha Técnica Comercial
+                            </div>
+                            <h2 class="font-headline-lg text-headline-lg text-navy font-bold tracking-tight mb-3">
+                                Organizador de Útiles Escolares
+                            </h2>
+                            <p class="font-body-md text-body-md text-slate-body mb-6 leading-relaxed">
+                                Estructurado con capas de cartón corrugado de alta densidad prensado a mano, diseñado
+                                específicamente para resistir el uso diario escolar sin deformarse ni perder su estética
+                                minimalista.
+                            </p>
+                            <!-- Price Callout Card -->
+                            <div
+                                class="w-full p-6 rounded-2xl bg-white shadow-md border-2 border-[#bdd2f6] mb-8 flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div
+                                            class="font-display-hero text-display-hero text-sky-500 font-bold leading-none mt-1">
+                                            S/ 20.00
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="px-3.5 py-1.5 rounded-lg bg-forest-light text-forest-dark font-label-md text-label-md font-bold uppercase tracking-wider border border-forest/30">
+                                        Stock Limitado
+                                    </span>
+                                </div>
+                                <div class="w-full h-[1px] bg-[#bdd2f6]/60"></div>
+                                <ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-slate-dark">
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-forest text-[18px]">verified</span>
+                                        <span>Cartón rígido recuperado y calibrado (3.5 mm espesor)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-forest text-[18px]">verified</span>
+                                        <span>Incluye depósito removible para restos de tajador</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-forest text-[18px]">verified</span>
+                                        <span>Acabado mate natural, libre de plásticos y barnices tóxicos</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4 w-full">
+                                <a class="flex-1 inline-flex items-center justify-center h-12 px-6 rounded-lg bg-navy text-white font-label-lg text-label-lg hover:bg-navy-soft transition-all shadow-md"
+                                    href="#pedidos">
+                                    <span class="material-symbols-outlined text-[20px] mr-2">check_circle</span>
+                                    <span>Realizar Pedido Ahora</span>
+                                </a>
+                                <a class="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-[#bdd2f6]/30 border border-[#bdd2f6] text-navy font-label-lg text-label-lg hover:bg-[#bdd2f6]/60 transition-colors"
+                                    href="#beneficios">
+                                    <span>Ver Beneficios</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECCIÓN: CARACTERÍSTICAS Y BENEFICIOS (#beneficios) -->
+            <section class="w-full py-16 lg:py-24 bg-[#f8fafc]" id="beneficios">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
+                        <span
+                            class="font-label-sm text-label-sm uppercase tracking-widest text-sky-500 font-bold mb-2">Ingeniería
+                            &amp; Valor</span>
+                        <h2 class="font-headline-lg text-headline-lg text-navy font-bold tracking-tight">
+                            Características y Beneficios
+                        </h2>
+                        <p class="font-body-md text-body-md text-slate-body mt-3">
+                            Cada detalle del EcoOrganiza ha sido ideado para maximizar el orden del escritorio sin
+                            ocupar espacio de estudio valioso.
+                        </p>
+                    </div>
+                    <!-- 4 High Contrast Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                        <!-- Card 1 -->
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-navy text-white flex items-center justify-center mb-5 shadow-sm">
+                                <span class="material-symbols-outlined text-[24px]">balance</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-2">
+                                Resistencia y Estabilidad
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-slate-body leading-relaxed">
+                                Diseñado con base amplia antirvuelco y un centro de gravedad calibrado que otorga un
+                                soporte firme incluso al almacenar tijeras pesadas y reglas largas.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 flex items-center text-forest font-label-sm text-label-sm font-bold uppercase tracking-wider border-t border-[#bdd2f6]/30">
+                                <span>Base Reforzada</span>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#bdd2f6] text-navy flex items-center justify-center mb-5 shadow-sm">
+                                <span class="material-symbols-outlined text-[24px]">grid_view</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-2">
+                                Múltiples Compartimentos
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-slate-body leading-relaxed">
+                                Medidas específicas organizadas por alturas: divisiones dedicadas para lápices,
+                                plumones, tijeras, reglas escolares y adhesivos en barra.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 flex items-center text-forest font-label-sm text-label-sm font-bold uppercase tracking-wider border-t border-[#bdd2f6]/30">
+                                <span>Diseño Ergonómico</span>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-sky-200 text-sky-500 flex items-center justify-center mb-5 shadow-sm">
+                                <span class="material-symbols-outlined text-[24px]">delete_sweep</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-2">
+                                Mini-Tachito Incorporado
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-slate-body leading-relaxed">
+                                Innovador compartimento con tapa abatible para depositar los residuos de tajador,
+                                virutas de goma y papelillos sin interrumpir tu clase.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 flex items-center text-sky-500 font-label-sm text-label-sm font-bold uppercase tracking-wider border-t border-[#bdd2f6]/30">
+                                <span>Módulo Exclusivo</span>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col border border-[#bdd2f6]/40">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-forest-light text-forest-dark flex items-center justify-center mb-5 shadow-sm">
+                                <span class="material-symbols-outlined text-[24px]"
+                                    style="font-variation-settings: 'FILL' 1;">eco</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-navy font-bold mb-2">
+                                Material Sostenible
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-slate-body leading-relaxed">
+                                Confeccionado enteramente con cartón reciclado seleccionado de alta durabilidad,
+                                reduciendo la contaminación por plásticos escolares comunes.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 flex items-center text-forest font-label-sm text-label-sm font-bold uppercase tracking-wider border-t border-[#bdd2f6]/30">
+                                <span>Impacto Circular</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- High Contrast Promotional Launch Banner in Warm Kraft / Terracotta Amber -->
+                    <div
+                        class="w-full bg-gradient-to-r from-sky-500 to-sky-300 text-white rounded-2xl p-8 lg:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 border border-white/20">
+                        <div class="flex items-center gap-5 z-10">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white shrink-0 shadow-md">
+                                <span class="material-symbols-outlined text-[36px]"
+                                    style="font-variation-settings: 'FILL' 1;">local_offer</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-widest text-gray-50 font-bold mb-1">
+                                    Promoción Exclusiva
+                                </span>
+                                <h3 class="font-headline-md text-headline-md font-bold text-white leading-tight">
+                                    Oferta Especial de Lanzamiento
+                                </h3>
+                                <p class="font-body-md text-body-md text-white/95 mt-1">
+                                    Por la compra de 2 unidades, ¡recibe un <span
+                                        class="font-bold underline decoration-white/60">10% de descuento
+                                        inmediato</span> en tu pedido total!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="z-10 shrink-0">
+                            <a class="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-navy text-white font-label-lg text-label-lg font-bold hover:bg-navy-soft transition-all shadow-lg border border-[#bdd2f6]/30"
+                                href="#pedidos">
+                                Aprovechar Oferta
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECCIÓN: INFORMACIÓN PARA REALIZAR PEDIDOS (#pedidos) -->
+            <section class="w-full py-16 lg:py-24 bg-white border-y border-[#bdd2f6]/30" id="pedidos">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        <!-- Left: Context & Instructions -->
+                        <div class="lg:col-span-5 flex flex-col">
+                            <span
+                                class="font-label-sm text-label-sm uppercase tracking-widest text-sky-500 font-bold mb-2">Canal
+                                Oficial de Adquisición</span>
+                            <h2 class="font-headline-lg text-headline-lg text-navy font-bold tracking-tight mb-4">
+                                Información para Realizar Pedidos
+                            </h2>
+                            <p class="font-body-md text-body-md text-slate-body mb-8 leading-relaxed">
+                                Completa tus datos escolares para coordinar la entrega directa en tu institución o aula.
+                                Los pedidos se gestionan mediante confirmación por WhatsApp en un plazo menor a 24
+                                horas.
+                            </p>
+                            <div class="space-y-4 mb-8">
+                                <div
+                                    class="flex items-start gap-3.5 p-4 rounded-xl bg-[#f8fafc] border border-[#bdd2f6]/60 shadow-sm">
+                                    <span
+                                        class="material-symbols-outlined text-forest text-[22px] mt-0.5">payments</span>
+                                    <div>
+                                        <span class="font-label-md text-label-md font-bold text-navy block">Métodos de
+                                            Pago Aceptados</span>
+                                        <span class="font-body-sm text-body-sm text-slate-body">Yape, Plin y Pago contra
+                                            entrega en aula (Efectivo exacto).</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3.5 p-4 rounded-xl bg-[#f8fafc] border border-[#bdd2f6]/60 shadow-sm">
+                                    <span class="material-symbols-outlined text-navy text-[22px] mt-0.5">school</span>
+                                    <div>
+                                        <span class="font-label-md text-label-md font-bold text-navy block">Entrega en
+                                            Institución Escolar</span>
+                                        <span class="font-body-sm text-body-sm text-slate-body">Coordinación directa por
+                                            aula, pabellón o turno de estudio.</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3.5 p-4 rounded-xl bg-[#f8fafc] border border-[#bdd2f6]/60 shadow-sm">
+                                    <span
+                                        class="material-symbols-outlined text-sky-500 text-[22px] mt-0.5">package_2</span>
+                                    <div>
+                                        <span class="font-label-md text-label-md font-bold text-navy block">Empaque
+                                            Eco-Protegido</span>
+                                        <span class="font-body-sm text-body-sm text-slate-body">Entregado con banda
+                                            kraft personalizada e identificación escolar.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-[#bdd2f6]/35 border border-[#bdd2f6] flex items-center gap-3">
+                                <span class="material-symbols-outlined text-navy text-[24px]">support_agent</span>
+                                <span class="font-body-sm text-body-sm text-navy font-semibold">¿Dudas previas?
+                                    Escríbenos directamente a hola@ecoorganiza.com</span>
+                            </div>
+                        </div>
+                        <!-- Right: Modern Accessible Order Form -->
+                        <div class="lg:col-span-7">
+                            <div class="w-full bg-[#f8fafc] p-8 lg:p-10 rounded-2xl shadow-md border border-[#bdd2f6]">
+                                <h3 class="font-headline-md text-headline-md text-navy font-bold mb-2">Formulario de
+                                    Pedido</h3>
+                                <p class="font-body-sm text-body-sm text-slate-body mb-6">Ingresa la información
+                                    requerida para procesar tu organizador sustentable.</p>
+                                <form class="flex flex-col gap-5" id="orderForm"
+                                    onsubmit="event.preventDefault(); document.getElementById('orderConfirmation').classList.remove('hidden'); document.getElementById('orderForm').classList.add('hidden');">
+                                    <!-- Nombres y Apellidos -->
+                                    <div class="flex flex-col gap-1.5">
+                                        <label
+                                            class="font-label-md text-label-md font-bold text-navy uppercase tracking-wider"
+                                            for="fullName">
+                                            Nombre y Apellidos <span class="text-sky-500">*</span>
+                                        </label>
+                                        <input
+                                            class="h-12 px-4 rounded-lg bg-white border border-[#bdd2f6] text-slate-dark placeholder:text-slate-400 outline-none focus:border-navy focus:ring-1 focus:ring-navy shadow-sm text-body-md"
+                                            id="fullName" name="fullName" placeholder="Ej: Sofía Valentina Mendoza"
+                                            required="" type="text" />
+                                    </div>
+                                    <!-- Teléfono / WhatsApp -->
+                                    <div class="flex flex-col gap-1.5">
+                                        <label
+                                            class="font-label-md text-label-md font-bold text-navy uppercase tracking-wider"
+                                            for="phone">
+                                            Teléfono o WhatsApp <span class="text-sky-500">*</span>
+                                        </label>
+                                        <div class="relative flex items-center">
+                                            <span
+                                                class="material-symbols-outlined absolute left-3 text-slate-500 text-[20px]">call</span>
+                                            <input
+                                                class="w-full h-12 pl-11 pr-4 rounded-lg bg-white border border-[#bdd2f6] text-slate-dark placeholder:text-slate-400 outline-none focus:border-navy focus:ring-1 focus:ring-navy shadow-sm text-body-md"
+                                                id="phone" name="phone" placeholder="+56 9 8452 1190 o +51 987 654 321"
+                                                required="" type="tel" />
+                                        </div>
+                                    </div>
+                                    <!-- Producto Seleccionado -->
+                                    <div class="flex flex-col gap-1.5">
+                                        <label
+                                            class="font-label-md text-label-md font-bold text-navy uppercase tracking-wider"
+                                            for="productSelect">
+                                            Producto Seleccionado <span class="text-sky-500">*</span>
+                                        </label>
+                                        <select
+                                            class="h-12 px-4 rounded-lg bg-white border border-[#bdd2f6] text-slate-dark font-body-md outline-none focus:border-navy focus:ring-1 focus:ring-navy shadow-sm cursor-pointer"
+                                            id="productSelect" name="productSelect" required="">
+                                            <option value="1">1x Organizador de Útiles Escolares — S/ 20.00</option>
+                                            <option value="2">2x Organizadores (Aplica 10% Descuento) — S/ 36.00
+                                            </option>
+                                            <option value="3">3x Organizadores Escolares — S/ 54.00</option>
+                                            <option value="pack">Pack Institucional / Salón Completo (Consultar
+                                                Cotización)</option>
+                                        </select>
+                                    </div>
+                                    <!-- Aula o Lugar de Entrega -->
+                                    <div class="flex flex-col gap-1.5">
+                                        <label
+                                            class="font-label-md text-label-md font-bold text-navy uppercase tracking-wider"
+                                            for="deliveryLocation">
+                                            Aula o Lugar de Entrega <span class="text-sky-500">*</span>
+                                        </label>
+                                        <div class="relative flex items-center">
+                                            <span
+                                                class="material-symbols-outlined absolute left-3 text-slate-500 text-[20px]">meeting_room</span>
+                                            <input
+                                                class="w-full h-12 pl-11 pr-4 rounded-lg bg-white border border-[#bdd2f6] text-slate-dark placeholder:text-slate-400 outline-none focus:border-navy focus:ring-1 focus:ring-navy shadow-sm text-body-md"
+                                                id="deliveryLocation" name="deliveryLocation"
+                                                placeholder="Ej: Colegio San Agustín, Aula 4B - Turno Mañana"
+                                                required="" type="text" />
+                                        </div>
+                                    </div>
+                                    <!-- Observaciones opcionales -->
+                                    <div class="flex flex-col gap-1.5">
+                                        <label
+                                            class="font-label-md text-label-md font-bold text-slate-body uppercase tracking-wider"
+                                            for="notes">
+                                            Notas adicionales (Opcional)
+                                        </label>
+                                        <textarea
+                                            class="p-4 rounded-lg bg-white border border-[#bdd2f6] text-slate-dark placeholder:text-slate-400 outline-none focus:border-navy focus:ring-1 focus:ring-navy shadow-sm text-body-md resize-none"
+                                            id="notes" name="notes"
+                                            placeholder="Ej: Entregar preferentemente en recreo de las 10:30 am."
+                                            rows="2"></textarea>
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <button
+                                        class="w-full h-14 mt-3 rounded-lg bg-navy text-white font-label-lg text-label-lg font-bold hover:bg-navy-soft transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                                        type="submit">
+                                        <span class="material-symbols-outlined text-[22px]">send</span>
+                                        <span>Enviar Pedido (Confirmar vía WhatsApp)</span>
+                                    </button>
+                                    <span class="font-body-sm text-body-sm text-center text-slate-body mt-1">
+                                        🔒 Tus datos solo se utilizarán para la coordinación y entrega de este pedido
+                                        escolar.
+                                    </span>
+                                </form>
+                                <!-- Order Confirmation State (Hidden by default) -->
+                                <div class="hidden flex-col items-center text-center p-8 bg-white border border-[#bdd2f6] rounded-xl"
+                                    id="orderConfirmation">
+                                    <div
+                                        class="w-16 h-16 rounded-full bg-forest-light border border-forest/30 flex items-center justify-center text-forest mb-4">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">done_all</span>
+                                    </div>
+                                    <h4 class="font-headline-md text-headline-md text-navy font-bold mb-2">¡Pedido
+                                        Registrado con Éxito!</h4>
+                                    <p class="font-body-md text-body-md text-slate-body max-w-md mb-6">
+                                        Hemos recibido tu solicitud. Nuestro equipo comercial se comunicará contigo vía
+                                        WhatsApp para confirmar los detalles de entrega en tu aula.
+                                    </p>
+                                    <button
+                                        class="px-6 py-2.5 rounded-lg bg-navy text-white font-label-md text-label-md uppercase font-bold hover:bg-navy-soft"
+                                        onclick="document.getElementById('orderConfirmation').classList.add('hidden'); document.getElementById('orderForm').classList.remove('hidden');">
+                                        Hacer otro pedido
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- BANNER CTA FINAL DE INVITACIÓN -->
+            <section class="w-full bg-[#f8fafc] py-16 lg:py-24">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
+                    <div
+                        class="w-full rounded-3xl bg-sky-500 text-white p-10 lg:p-16 shadow-2xl relative overflow-hidden flex flex-col items-center text-center border border-[#bdd2f6]/30">
+                        <!-- Ambient decorative backdrop elements -->
+                        <div
+                            class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sky-50/10 blur-3xl pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-sky/15 blur-3xl pointer-events-none">
+                        </div>
+                        <span
+                            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#bdd2f6]/20 border border-[#bdd2f6]/40 text-white font-label-sm text-label-sm uppercase font-bold tracking-widest mb-6">
+                            <span class="material-symbols-outlined text-[16px]">school</span>
+                            Comunidad Educativa Comprometida
+                        </span>
+                        <h2
+                            class="font-headline-lg text-headline-lg lg:text-display-hero font-bold tracking-tight text-white max-w-3xl leading-tight mb-4">
+                            Adquiere tu organizador desde hoy
+                        </h2>
+                        <p class="font-body-lg text-body-lg text-gray-50 max-w-2xl mb-10 leading-relaxed">
+                            Mantén tu espacio de estudio impecable y apoya una iniciativa sostenible que transforma
+                            cartón en herramientas de aprendizaje durable.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto z-10">
+                            <a class="w-full sm:w-auto inline-flex items-center justify-center h-14 px-10 rounded-lg bg-navy text-white font-label-lg text-label-lg font-bold hover:bg-navy-soft transition-all shadow-lg"
+                                href="#pedidos">
+                                <span>Pedir Ahora por S/ 20.00</span>
+                                <span class="material-symbols-outlined text-[20px] ml-2">arrow_forward</span>
+                            </a>
+                            
+                        </div>
+                        <div
+                            class="mt-12 flex flex-wrap items-center justify-center gap-8 text-slate-300 font-label-md text-label-md">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#bdd2f6] text-[18px]">verified</span>
+                                <span>Cartón Prensado Resistente</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#bdd2f6] text-[18px]">local_shipping</span>
+                                <span>Entrega Escolar Directa</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#bdd2f6] text-[18px]">handshake</span>
+                                <span>Emprendimiento Juvenil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="w-full bg-[#f1f5f9] text-slate-dark border-t border-[#bdd2f6]/40 shadow-sm">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-12 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4 flex flex-col gap-4">
+                    <div class="flex items-center font-headline-md text-headline-md tracking-tight"><span
+                            class="text-sky-300 font-bold">eco</span><span
+                            class="text-sky-500 font-bold">Organiza</span></div>
+                    <p class="font-body-sm text-body-sm text-slate-body max-w-sm">Organización escolar sustentable
+                        basada en arquitectura modular y cartón prensado de alta resistencia. Diseñado con precisión
+                        para aulas, docentes y estudiantes comprometidos con el planeta.</p>
+                    <div class="flex items-center gap-3 pt-2"><a aria-label="Portal institucional"
+                            class="w-10 h-10 rounded-lg bg-white border border-[#bdd2f6]/60 flex items-center justify-center text-navy hover:bg-[#bdd2f6] transition-colors"
+                            href="#"><span class="material-symbols-outlined text-[20px]">public</span></a><a
+                            aria-label="Canal de novedades"
+                            class="w-10 h-10 rounded-lg bg-white border border-[#bdd2f6]/60 flex items-center justify-center text-navy hover:bg-[#bdd2f6] transition-colors"
+                            href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a><a
+                            aria-label="Contacto directo"
+                            class="w-10 h-10 rounded-lg bg-white border border-[#bdd2f6]/60 flex items-center justify-center text-navy hover:bg-[#bdd2f6] transition-colors"
+                            href="#"><span class="material-symbols-outlined text-[20px]">chat</span></a></div>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-3"><span
+                        class="font-label-lg text-label-lg text-navy uppercase tracking-wider font-bold">Navegación</span>
+                    <ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-slate-body">
+                        <li><a class="hover:text-navy transition-colors" data-path="inicio" href="#">Inicio</a></li>
+                        <li><a class="hover:text-navy transition-colors" data-path="nosotros"
+                                href="#nosotros">Nosotros</a></li>
+                        <li><a class="hover:text-navy transition-colors" data-path="producto" href="#producto">Producto
+                                Modular</a></li>
+                        <li><a class="hover:text-navy transition-colors" data-path="beneficios"
+                                href="#beneficios">Impacto &amp; Beneficios</a></li>
+                        <li><a class="hover:text-navy transition-colors" data-path="pedidos" href="#pedidos">Catálogo de
+                                Pedidos</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-3"><span
+                        class="font-label-lg text-label-lg text-navy uppercase tracking-wider font-bold">Integrantes</span>
+                    
+                    <div class="flex flex-col gap-2 font-body-sm text-body-sm text-slate-body">
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-navy text-[18px]">build_circle</span>
+                            <span>Anghelin Chavez</span>
+                        </div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-navy text-[18px]">build_circle</span>
+                            <span>Fabiana Taco</span>
+                        </div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-navy text-[18px]">build_circle</span>
+                            <span>Joydie Paredes</span>
+                        </div>
+                         <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-navy text-[18px]">build_circle</span>
+                            <span>Valeria Mendoza</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-3"><span
+                        class="font-label-lg text-label-lg text-navy uppercase tracking-wider font-bold">Contacto &amp;
+                        Ventas</span>
+                    <div class="flex flex-col gap-2.5 font-body-sm text-body-sm text-slate-body">
+                        <div class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-sky-500 text-[18px] mt-0.5">mail</span><span>hola@ecoorganiza.com</span>
+                        </div>
+                        <div class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-sky-500 text-[18px] mt-0.5">call</span><span>+51
+                                984 521 190</span></div>
+                        <div class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-sky-500 text-[18px] mt-0.5">location_on</span><span>Av.
+                                Los Cipreses 1024, Lima, Perú</span></div>
+                        <div class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-sky-500 text-[18px] mt-0.5">schedule</span><span>Lunes
+                                a Viernes: 08:30 - 18:00 hrs</span></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-12 pt-8 border-t border-[#bdd2f6]/50 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-slate-body">
+                <p>© 2025 EcoOrganiza. Materiales pedagógicos sostenibles. Todos los derechos reservados.</p>
+                <div class="flex items-center gap-6 font-label-md text-label-md"><a
+                        class="hover:text-navy transition-colors" href="#">Términos de Servicio</a><a
+                        class="hover:text-navy transition-colors" href="#">Política de Privacidad</a><a
+                        class="hover:text-navy transition-colors" href="#">Certificaciones FSC</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
